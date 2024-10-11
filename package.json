@@ -1,5 +1,5 @@
 {
-  "name": "chat-app",
+  "name": "woven",
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
