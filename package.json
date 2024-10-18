@@ -11,6 +11,7 @@
     "@solidjs/router": "^0.14.7",
     "@solidjs/start": "^1.0.8",
     "autoprefixer": "^10.4.19",
+    "dexie": "^4.0.8",
     "google-auth-library": "^9.14.2",
     "postcss": "^8.4.38",
     "socket.io": "^4.8.0",
