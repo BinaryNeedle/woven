@@ -1,5 +1,3 @@
-import { AssetsImport } from "./AssetsImport";
-
 export default function SideBar() {
 	const hostName = import.meta.env.VITE_HOSTNAME;
 	return (
