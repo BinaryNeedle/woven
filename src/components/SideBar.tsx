@@ -1,7 +1,7 @@
 export default function SideBar() {
 	const hostName = import.meta.env.VITE_HOSTNAME;
 	return (
-		<aside class="w-1/4 flex flex-col justify-between border-r border-black h-screen">
+		<aside class="w-1/5 flex flex-col justify-between border-r border-black h-screen">
 			<section class="grid grid-cols-1">
 				<section class="justify-self-center mt-10 mb-7">
 					<img src={hostName + "/assets/svg/App Title.svg"} alt="Woven Logo" />
