@@ -12,6 +12,14 @@ export default function FriendList() {
                   </div>
                   <div class="grid grid-rows-9 h-fit">
                         <FriendCard/>
+                        <FriendCard/>
+                        <FriendCard/>
+                        <FriendCard/>
+                        <FriendCard/>
+                        <FriendCard/>
+                        <FriendCard/>
+                        <FriendCard/>
+                        <FriendCard/>
                   </div>
             </section>
       );
