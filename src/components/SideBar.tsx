@@ -3,18 +3,19 @@ export default function SideBar() {
 	return (
 		<aside class="w-1/5 flex flex-col justify-between border-r border-black h-screen">
 			<section class="grid grid-cols-1">
-				<section class="justify-self-center mt-10 mb-7">
+				<section class="justify-self-center my-10">
 					<img src={hostName + "/assets/svg/App Title.svg"} alt="Woven Logo" />
 				</section>
-				<section class="px-5 mb-9 relative">
+				<section class="px-5 mb-10 relative">
 					<input
 						type="text"
 						placeholder="Search"
-						class="block w-full rounded-md border-0 py-1.5 pl-7 pr-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+						class="block w-full rounded border-0 py-1.5 pl-7 pr-14 bg-[#17394D] text-gray-900 border-b-2 border-cyan-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6 outline-none"
 					/>
+					{/* jangan button kalo bisa kan gausah di pencet, di ketik aja udh bisa search */}
 					<button
 						type="button"
-						class="text-black absolute end-4 bottom-0 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5"
+						class="text-black absolute end-4 bottom-0  focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5"
 					>
 						<img src={hostName + "/assets/svg/search.svg"} alt="Search" />
 					</button>
@@ -22,7 +23,7 @@ export default function SideBar() {
 				<section>
 					<section id="search_result"></section>
 					<section id="conversation">
-						<section class="grid grid-cols-5 px-3 mb-4">
+						<section class="grid grid-cols-5 p-3 hover:cursor-pointer hover:bg-[#17394D]">
 							<img
 								src={hostName + "/assets/svg/Conversation Image.svg"}
 								alt="Profile Image"
@@ -35,7 +36,7 @@ export default function SideBar() {
 								<p class="text-sm text-slate-400 text-end">Fri</p>
 							</section>
 						</section>
-						<section class="grid grid-cols-5 px-3 mb-4">
+						<section class="grid grid-cols-5 p-3 hover:cursor-pointer hover:bg-[#17394D]">
 							<img
 								src={hostName + "/assets/svg/Conversation Image.svg"}
 								alt="Profile Image"
@@ -48,7 +49,7 @@ export default function SideBar() {
 								<p class="text-sm text-slate-400 text-end">Fri</p>
 							</section>
 						</section>
-						<section class="grid grid-cols-5 px-3 mb-4">
+						<section class="grid grid-cols-5 p-3 hover:cursor-pointer hover:bg-[#17394D]">
 							<img
 								src={hostName + "/assets/svg/Conversation Image.svg"}
 								alt="Profile Image"
@@ -61,7 +62,7 @@ export default function SideBar() {
 								<p class="text-sm text-slate-400 text-end">Fri</p>
 							</section>
 						</section>
-						<section class="grid grid-cols-5 px-3 mb-4">
+						<section class="grid grid-cols-5 p-3 hover:cursor-pointer hover:bg-[#17394D]">
 							<img
 								src={hostName + "/assets/svg/Conversation Image.svg"}
 								alt="Profile Image"

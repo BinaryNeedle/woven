@@ -1,11 +1,15 @@
 import SideBar from "../components/SideBar";
-import ConversationPane from "../components/ConversationPane";
+import SettingSidebar from "../components/SettingSidebar";
+import ConversationPane from "../components/ChatPane";
+import FriendList from "../components/FriendList";
 
 export default function Home() {
 	return (
-		<main class="">
+		<main class="flex">
 			<SideBar />
-			<ConversationPane />
+			{/* <SettingSidebar /> */}
+			{/* <ConversationPane /> */}
+			<FriendList />
 		</main>
 	);
 }
