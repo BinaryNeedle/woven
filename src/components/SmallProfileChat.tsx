@@ -4,7 +4,7 @@ export default function SmallProfileChat(props: any) {
 	const profilePicture: string = props.profilePicture;
 	const name: string = props.name;
 	return (
-		<nav class="w-full flex items-center h-24">
+		<nav class="w-full flex items-center h-24 shadow-md">
 			<img
 				src={hostName + "/assets/svg/Online Status.svg"}
 				alt=""

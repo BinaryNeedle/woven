@@ -5,7 +5,21 @@ export default function ChatPane() {
 	return (
 		<section class="w-4/5 grid grid-rows-10">
 			<SmallProfileChat name="jaki" />
-			<section class="row-span-8">b</section>
+			<section class="row-span-8 text-white flex flex-col-reverse overflow-y-auto">
+				<div class="grid grid-cols-2 mx-10 gap-4">
+					<div class="receive col-span-2"> {/* Changed to col-span-2 */}
+						<div class="card w-2/3 h-fit bg-[#17394D] p-4 rounded-lg"> {/* Changed w-full to w-4/5 */}
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto a commodi rem vero dolorem culpa nam quam qui neque. Exercitationem!
+						</div>
+					</div>
+					<div class="sent col-span-2 flex justify-end"> {/* Changed to col-span-2 and added flex justify-end */}
+						<div class="card w-2/3 h-fit bg-[#17394D] p-4 rounded-lg"> {/* Changed w-full to w-4/5 */}
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto a commodi rem vero dolorem culpa nam quam qui neque. Exercitationem!
+						</div>
+					</div>
+					{/* You can add more message divs here */}
+				</div>
+			</section>
 			<section class="px-5 my-auto relative">
 				<input
 					type="text"
