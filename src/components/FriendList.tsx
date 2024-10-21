@@ -11,6 +11,13 @@ export default function FriendList() {
                               FRIENDS LIST
                         </h1>
                   </div>
+                  <div class="flex grid-rows-1 h-fit w-full items-center justify-center mb-5">
+                        <input
+						type="text"
+						placeholder="Search"
+						class="block w-full mx-10 rounded border-0 py-1.5 pl-7 pr-14 bg-[#17394D] text-gray-900 border-b-2 border-cyan-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6 outline-none"
+					/>
+                  </div>
                   <div class="grid grid-rows-9 h-fit">
                         <FriendCard/>
                         <FriendCard/>

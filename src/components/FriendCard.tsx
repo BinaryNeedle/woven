@@ -25,7 +25,7 @@ export default function FriendsCard() {
                               </div>
                               <section class="w-fit">
                                     <div class=" h-full flex float-end">
-                                          <img src={hostName + "/assets/svg/dot-menu-more-svgrepo-com.svg"} alt="" />
+                                          <img src={hostName + "/assets/svg/message.svg"} class="w-11 h-11 p-2 mx-2 bg-cyan-700 hover:bg-[#17394D] rounded-full" alt="message.svg" />
                                     </div>
                               </section>
                         </section>

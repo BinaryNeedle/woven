@@ -19,7 +19,7 @@ export default function SearchFriend() {
                   </div>
                   <div class="grid grid-rows-9 h-fit">
                         <div class="flex justify-center items-center">
-                  <div class="w-full mx-10 hover:bg-[#17394D] cursor-pointer rounded border-t-2 border-[#17394D] p-3 h-fit">
+                  <div class="w-full mx-10 cursor- hover:bg-[#17394D] rounded border-t-2 border-[#17394D] p-3 h-fit">
                         <section class="flex grid-cols-3">
                               <div class="flex grid-cols-3 col-span-3 w-full">
                                     <img class="mx-2"
@@ -37,9 +37,9 @@ export default function SearchFriend() {
                                     </div>
                               </div>
                               <section class="w-fit">
-                                    <div class=" h-full flex float-end">
-                                          <img src={hostName + "/assets/svg/message.svg"} alt="" />
-                                          <img src={hostName + "/assets/svg/plus.svg"} alt="" />
+                                    <div class="h-full flex float-end my-2">
+                                          <img src={hostName + "/assets/svg/message.svg"} class="w-11 h-11 p-2 mx-2 bg-cyan-700 hover:bg-[#17394D] rounded-full" alt="message.svg" />
+                                          <img src={hostName + "/assets/svg/plus.svg"} class="w-11 h-11 p-2 mx-2 bg-cyan-700 hover:bg-[#17394D] rounded-full" alt="addfriend.svg" />
                                     </div>
                               </section>
                         </section>
