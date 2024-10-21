@@ -9,8 +9,8 @@ export default function SideBar() {
 				<section class="px-5 mb-10 relative">
 					<input
 						type="text"
-						placeholder="Search"
-						class="block w-full rounded border-0 py-1.5 pl-7 pr-14 bg-[#17394D] text-gray-900 border-b-2 border-cyan-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6 outline-none"
+						placeholder="Type a message"
+						class="block w-full rounded border-0 py-1.5 pl-7 pr-14 text-white bg-[#17394D] border-b-2 border-cyan-600 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-cyan-600 sm:text-sm sm:leading-6 outline-none"
 					/>
 					{/* jangan button kalo bisa kan gausah di pencet, di ketik aja udh bisa search */}
 					<button
