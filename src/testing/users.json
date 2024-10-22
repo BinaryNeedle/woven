@@ -3,7 +3,7 @@
             "user_id": 1,
             "username": "ahmadzkh",
             "email": "ahmadzkh@example.com",
-            "nickname": "Jaki",
+            "nickname": "Ahmad Zaky",
             "biography": "Graphic designer and illustrator.",
             "last_seen": "2023-10-01T12:34:56Z",
             "is_online": true
@@ -12,7 +12,7 @@
             "user_id": 2,
             "username": "reizafran",
             "email": "reizafran@example.com",
-            "nickname": "Rei",
+            "nickname": "Raihan Zhafran",
             "biography": "Digital marketer and content creator.",
             "last_seen": "2023-10-01T11:20:30Z",
             "is_online": false
@@ -21,7 +21,7 @@
             "user_id": 3,
             "username": "iuswahyu",
             "email": "iuswahyu@example.com",
-            "nickname": "Ius",
+            "nickname": "Julius Wahyu",
             "biography": "Software developer with a passion for open-source projects.",
             "last_seen": "2023-10-01T09:15:00Z",
             "is_online": true
@@ -30,7 +30,7 @@
             "user_id": 4,
             "username": "aseptian",
             "email": "aseptian@example.com",
-            "nickname": "Septian",
+            "nickname": "Septian Tri",
             "biography": "Construction manager and handyman.",
             "last_seen": "2023-10-01T08:45:00Z",
             "is_online": false

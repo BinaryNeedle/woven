@@ -1,0 +1,54 @@
+/* From Uiverse.io by Satwinder04 */
+/* Input container */
+.input-container-text {
+      position: relative;
+      margin: 20px;
+      border-bottom: 2px solid rgb(14 116 144);
+}
+
+.input-container-file {
+      position: relative;
+      margin: 20px;
+}
+
+/* Input field */
+.input-field {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      background-color: transparent;
+}
+
+/* Input label */
+.input-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 16px;
+      color: rgba(204, 204, 204, 0);
+      pointer-events: none;
+      transition: all 0.3s ease;
+}
+
+/* Input highlight */
+.input-highlight {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0;
+      background-color: whitesmoke;
+      transition: all 0.3s ease;
+}
+
+/* Input field:focus styles */
+.input-field:focus+.input-label {
+      top: -20px;
+      color: whitesmoke;
+}
+
+.input-field:focus+.input-label+.input-highlight {
+      width: 100%;
+}

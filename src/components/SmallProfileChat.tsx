@@ -6,7 +6,7 @@ export default function SmallProfileChat(props: any) {
 	const username: string = props.username;
 
 	return (
-		<nav class="w-full flex items-center h-24 shadow-md">
+		<nav class="w-full flex items-center h-24 mb-10 shadow-xl overflow-y-hidden z-[99]">
 			<img
 				src={hostName + "/assets/svg/Online Status.svg"}
 				alt=""

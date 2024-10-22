@@ -7,9 +7,9 @@ export default function FriendsCard() {
       return (
             <div class="flex justify-center items-center">
                   <div class="w-full mx-10 hover:bg-[#17394D] cursor-pointer rounded border-t-2 border-[#17394D] p-3 h-fit">
-                        <section class="flex grid-cols-3">
+                        <section class="flex grid-cols-3 mx-5">
                               <div class="flex grid-cols-3 col-span-3 w-full">
-                                    <img class="mx-2"
+                                    <img class="mr-5 w-16"
                                           src={hostName + "/assets/svg/Conversation Image.svg"}
                                           alt="Profile Image"
                                           />
@@ -25,7 +25,7 @@ export default function FriendsCard() {
                               </div>
                               <section class="w-fit">
                                     <div class=" h-full flex float-end">
-                                          <img src={hostName + "/assets/svg/message.svg"} class="w-11 h-11 p-2 mx-2 bg-cyan-700 hover:bg-[#17394D] rounded-full" alt="message.svg" />
+                                          <img src={hostName + "/assets/svg/message.svg"} class="w-12 h-12 p-3 bg-cyan-700 hover:bg-[#17394D] rounded-full" alt="message.svg" />
                                     </div>
                               </section>
                         </section>
