@@ -40,6 +40,7 @@ Here you list all prerequisites necessary for running your project. For example:
 
 - [NodeJS](https://nodejs.org/en)
 - [Git](https://git-scm.com/)
+- [yarn](https://classic.yarnpkg.com/lang/en/docs/install/)
 
 <h3>Cloning</h3>
 
