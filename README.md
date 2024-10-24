@@ -127,4 +127,4 @@ Everything you need to build a Solid project, powered by [`solid-start`](https:/
 
 <hr/>
 
-<p align="center">thanks for <a href="https://www.makeread.me">makeread.me</a> for this amazing README.md</p>
+<p align="center">thanks to <a href="https://www.makeread.me">makeread.me</a> for this amazing README.md</p>
