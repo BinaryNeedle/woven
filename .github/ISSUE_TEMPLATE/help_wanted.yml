@@ -1,0 +1,34 @@
+name: Help Wanted
+description: Request help with a problem or question
+title: "[HELP WANTED] "
+labels: ["help wanted"]
+assignees: ["MRaihanZ", "jtnqr", "ahmadzkh", "caleheinzz25"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reaching out for help!
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: A clear and concise title for your request
+      placeholder: e.g., Help with setting up the environment
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the issue
+      description: A clear and concise description of what you need help with
+      placeholder: Explain your problem or question in detail...
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps taken
+      description: Please list the steps you have already taken
+      placeholder: e.g., Step 1, Step 2, Step 3...
+  - type: input
+    id: expected
+    attributes:
+      label: What you expect
+      description: Describe what kind of help you expect
+      placeholder: What do you need help with?

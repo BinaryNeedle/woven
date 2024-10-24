@@ -1,0 +1,16 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Support
+    url: https://example.com/support
+    about: If you have questions, try our support.
+
+issue_templates:
+  - name: Bug report
+    description: Report a bug in the project
+    labels: ["bug"]
+    template: bug_report.yml
+
+  - name: Help Wanted
+    description: Request help or ask a question
+    labels: ["help wanted"]
+    template: help_wanted.yml
