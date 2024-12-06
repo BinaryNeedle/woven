@@ -31,7 +31,7 @@ model conversation_member {
   joined_at              DateTime?    @default(now()) @db.Timestamp(6)
   conversation           conversation @relation(fields: [conversation_id], references: [conversation_id], onDelete: NoAction, onUpdate: NoAction)
   role                   role         @relation(fields: [role_id], references: [role_id], onDelete: NoAction, onUpdate: NoAction)
-  user                   user         @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+  user                   user         @relation(fields: [user_id], references: [userId], onDelete: NoAction, onUpdate: NoAction)
 
   @@unique([conversation_id, user_id], map: "conversation_member_conversation_id_user_id_idx")
 }
@@ -45,7 +45,7 @@ model message {
   status          message_status? @default(pending)
   sent_at         DateTime?       @default(now()) @db.Timestamp(6)
   conversation    conversation    @relation(fields: [conversation_id], references: [conversation_id], onDelete: NoAction, onUpdate: NoAction)
-  user            user            @relation(fields: [user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+  user            user            @relation(fields: [user_id], references: [userId], onDelete: NoAction, onUpdate: NoAction)
 
   @@index([conversation_id, sent_at])
 }
@@ -60,7 +60,7 @@ model role {
 
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 model user {
-  user_id                                         Int                   @id @default(autoincrement())
+  userId                                          Int                   @id @default(autoincrement()) @map("user_id")
   username                                        String                @unique @db.VarChar
   email                                           String                @unique @db.VarChar
   nickname                                        String?               @db.VarChar
@@ -84,8 +84,8 @@ model user_contact {
   alias                                   String    @db.VarChar
   created_at                              DateTime? @default(now()) @db.Timestamp(6)
   updated_at                              DateTime? @default(now()) @db.Timestamp(6)
-  user_user_contact_contact_user_idTouser user      @relation("user_contact_contact_user_idTouser", fields: [contact_user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
-  user_user_contact_owner_user_idTouser   user      @relation("user_contact_owner_user_idTouser", fields: [owner_user_id], references: [user_id], onDelete: NoAction, onUpdate: NoAction)
+  user_user_contact_contact_user_idTouser user      @relation("user_contact_contact_user_idTouser", fields: [contact_user_id], references: [userId], onDelete: NoAction, onUpdate: NoAction)
+  user_user_contact_owner_user_idTouser   user      @relation("user_contact_owner_user_idTouser", fields: [owner_user_id], references: [userId], onDelete: NoAction, onUpdate: NoAction)
 
   @@unique([owner_user_id, contact_user_id], map: "user_contact_owner_user_id_contact_user_id_idx")
 }
