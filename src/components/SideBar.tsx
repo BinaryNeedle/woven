@@ -6,11 +6,11 @@ interface User {
 	nickname: string;
 	biography: string;
 	username: string;
-	avatar: string; 
+	avatar: string;
 }
 
 interface SideBar {
-	currentUser:  User | null;
+	currentUser: User | null;
 }
 
 export default function SideBar(props: SideBar) {
@@ -24,17 +24,19 @@ export default function SideBar(props: SideBar) {
 
 	// Initialize the signals with current user data when component mounts
 	onMount(() => {
-		if (props.currentUser ) {
-			setUsername(props.currentUser .username);
-			setNickname(props.currentUser .nickname);
-			setAvatar(props.currentUser .avatar || ''); // Default to empty if no avatar
-			setBiography(props.currentUser .biography);
+		if (props.currentUser) {
+			setUsername(props.currentUser.username);
+			setNickname(props.currentUser.nickname);
+			setAvatar(props.currentUser.avatar || ''); // Default to empty if no avatar
+			setBiography(props.currentUser.biography);
 		}
 	});
 	return (
 		<aside class=" flex flex-col justify-between shadow-lg border-r-2 border-[#17394D] h-dvh">
 			<section class="grid grid-cols-1">
 				<section class="justify-self-center my-10">
+
+					{/* TODO: perbaiki pemanggilan logo woven ketika tidak ditemukan */}
 					<img src={`${hostName}/assets/svg/App Title.svg`} alt="Woven Logo" />
 				</section>
 				<section class="px-5 mb-10 relative">
@@ -45,9 +47,10 @@ export default function SideBar(props: SideBar) {
 					/>
 					<button
 						type="button"
-						class="text-black absolute end-4 bottom-0 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5"
-					>
-						<img src={`${hostName}/assets/svg/search.svg`} alt="Search" />
+						class="text-white absolute end-4 bottom-0 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1.5">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+						</svg>
 					</button>
 				</section>
 				{/* Conversation Rooms Start */}
@@ -77,21 +80,29 @@ export default function SideBar(props: SideBar) {
 			</section>
 			<section class="grid grid-cols-4 px-8 bg-[#17394D] py-4">
 				<section class="col-span-3 flex items-center">
-					<img
+					{/* <img
 						src={`${hostName}/assets/svg/Online Status.svg`}
 						alt="Online Status"
-					/>
-					<img
+					/> */}
+					{/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+					</svg> */}
+
+					{/* <img
 						src={`${hostName}/assets/svg/Conversation Image.svg`}
 						alt="Image Profile"
 						class="mx-3"
-					/>
+					/> */}
 					{/* Displaying the username of the logged-in user */}
-					<h2 class="text-lg font-bold text-white">{props.currentUser  ? props.currentUser .nickname : 'User  not found'}</h2>
+
+					{/* TODO: perbaikin posisi username */}
+					<h2 class="text-lg font-bold text-white">{props.currentUser ? props.currentUser.nickname : 'User  not found'}</h2>
 				</section>
 				<section class="flex justify-end">
-					<button type="button">
-						<img src={`${hostName}/assets/svg/menu.svg`} alt="Menu" />
+					<button type="button" class="text-white">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+						</svg>
 					</button>
 				</section>
 			</section>
