@@ -15,7 +15,7 @@
     "google-auth-library": "^9.14.2",
     "graphql": "^16.9.0",
     "graphql-ws": "^5.16.0",
-    "graphql-yoga": "^5.7.0",
+    "graphql-yoga": "^5.10.4",
     "postcss": "^8.4.38",
     "prisma": "^5.21.1",
     "solid-js": "^1.9.1",
@@ -31,6 +31,7 @@
     "url": "git+https://github.com/BinaryNeedle/woven.git"
   },
   "devDependencies": {
-    "@onozaty/prisma-db-comments-generator": "^1.0.1"
+    "@onozaty/prisma-db-comments-generator": "^1.0.1",
+    "@types/ws": "^8.5.13"
   }
 }

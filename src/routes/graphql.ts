@@ -1,23 +1,28 @@
-import { WebSocketServer } from "ws";
-import { useServer } from "graphql-ws/lib/use/ws";
-import { schema } from "./../schema";
-import { graphql } from "graphql";
-import type { APIEvent } from "@solidjs/start/server";
+import { WebSocketServer } from 'ws';
+import { useServer } from 'graphql-ws/lib/use/ws';
+import { schema } from './../schema'; // Adjust this based on your schema file path
+import { createYoga } from 'graphql-yoga';
+import { createServer } from 'http';
 
-const wsServer = new WebSocketServer({
-  port: 5000,
-  path: "/graphql",
+// Create the Yoga GraphQL server
+const yogaApp = createYoga({
+  schema,
+  graphiql: {
+    subscriptionsProtocol: 'WS', // Enable WS for GraphiQL subscriptions
+  },
 });
 
+// Create HTTP server from Yoga app
+const server = createServer(yogaApp);
+
+// Create WebSocket server instance
+const wsServer = new WebSocketServer({
+  server, // Attach WebSocket server to the same HTTP server
+  path: '/graphql', // WebSocket path for GraphQL subscriptions
+});
+
+// Connect WebSocket server to GraphQL schema
 useServer({ schema }, wsServer);
 
-const handler = async (event: APIEvent) => {
-  const body = await new Response(event.request.body).json();
-
-  const result = await graphql({ schema, source: body.query });
-
-  return result;
-};
-
-export const GET = handler;
-export const POST = handler;
+// Export the server for use in your app configuration
+export default server;
