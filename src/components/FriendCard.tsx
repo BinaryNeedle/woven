@@ -1,4 +1,4 @@
-export default function FriendsCard() {
+export default function FriendsCard({ user }) {
       const hostName = import.meta.env.VITE_HOSTNAME;
       
       const nickName = "ius";
@@ -24,9 +24,9 @@ export default function FriendsCard() {
                                     </div>
                               </div>
                               <section class="w-fit">
-                                    <div class=" h-full flex float-end">
+                                    <a href="http://localhost:3000/chat" class=" h-full flex float-end">
                                           <img src={hostName + "/assets/svg/message.svg"} class="w-12 h-12 p-3 bg-cyan-700 hover:bg-[#17394D] rounded-full" alt="message.svg" />
-                                    </div>
+                                    </a>
                               </section>
                         </section>
                   </div>

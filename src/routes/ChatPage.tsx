@@ -1,13 +1,13 @@
 import SideBar from '../components/SideBar';
+import ChatPane from "../components/ChatPane";
 import FriendList from "../components/FriendList";
+import SearchFriend from "../components/SearchFriend";
+
+// Setting Area
+import SettingSidebar from "../components/SettingSidebar";
+import SettingsPane from "../components/SettingsPane";
 
 import users from "../testing/users.json";
-
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
 
 export default function Home() {
     	const LoggedId = 3; // This is the user_id of the logged-in user
@@ -20,8 +20,8 @@ export default function Home() {
 			{/* Sidebar Only End */}
 
 			{/* Choose Body Start */}
-			{/* <ChatPane /> */}
-			<FriendList />
+			<ChatPane />
+			{/* <FriendList /> */}
 			{/* <SearchFriend /> */}
 			{/* Choose Body End */}
 

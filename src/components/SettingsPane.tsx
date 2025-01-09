@@ -35,7 +35,7 @@ export default function SettingsPane(props: SettingsPaneProps) {
 	return (
 		<section id="setting-pane" class="col-span-4 grid grid-rows-5 p-10 overflow-hidden">
 			<div class='flex justify-start h-fit text-white head'>
-			<a href="" class=''>
+			<a href="http://localhost:3000/login" class=''>
 				<img src={hostName + "/assets/svg/backPage.svg"} alt="" class="w-10" />
 			</a>
 			<h1 class="text-4xl font-bold ml-3">Profile</h1>

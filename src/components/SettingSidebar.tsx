@@ -5,7 +5,7 @@ export default function SettingSideBar() {
 	const hostName = import.meta.env.VITE_HOSTNAME;
 
 	return (
-		<aside class="w-1/5 flex flex-col justify-center border-r border-black h-screen tracking-wide">
+		<aside class="w-full flex flex-col justify-center border-r border-black h-screen tracking-wide">
 			<section class="grid grid-cols-1">
 				<h2 class="text-5xl text-white font-bold text-center my-10">Settings</h2>
 			</section>
