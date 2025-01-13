@@ -1,12 +1,5 @@
 import SideBar from '../components/SideBar';
-import ChatPane from "../components/ChatPane";
-import FriendList from "../components/FriendList";
 import SearchFriend from "../components/SearchFriend";
-
-
-// Setting Area
-import SettingSidebar from "../components/SettingSidebar";
-import SettingsPane from "../components/SettingsPane";
 
 import users from "../testing/users.json";
 

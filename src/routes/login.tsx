@@ -1,4 +1,3 @@
-// import tailwind gimana
 import { A } from "@solidjs/router";
 import "../css/Login.css";
 
@@ -20,8 +19,7 @@ export default function login() {
 	};
 
 	return (
-		<main class="flex items-center justify-center h-screen bg-[#17394D]">
-			{/* From Uiverse.io by D3OXY  */}
+		<main class="flex items-center justify-center h-screen bg-[#0E8388]">
 			<form action="" class="form shadow-xl w-96 p-5">
 				<p>
 					Welcome,<span>sign in to continue</span>
