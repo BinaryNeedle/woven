@@ -1,15 +1,15 @@
-import { JSX } from "solid-js";
+import { JSX, Component } from "solid-js";
 import SmallProfileChat from "./SmallProfileChat";
 import Message from "./Message";
 
-interface Props {
+interface ChatPaneProps {
 	hostName: string;
 	otherUsers: any;
 }
 
-export default function ChatPane({ hostName, otherUsers }: Props): JSX.Element {
+const ChatPane: Component<ChatPaneProps> = (props): JSX.Element => {
 	const targetUserId = 2;
-	const targetUser = otherUsers.find(
+	const targetUser = props.otherUsers.find(
 		(user: any) => user.user_id === targetUserId
 	);
 
@@ -23,7 +23,7 @@ export default function ChatPane({ hostName, otherUsers }: Props): JSX.Element {
 					userId={targetUser.user_id}
 					username={targetUser.username}
 					isOnline={targetUser.is_online}
-					hostName={hostName}
+					hostName={props.hostName}
 				/>
 			)}
 			{/* Component Messages Start */}
@@ -37,8 +37,14 @@ export default function ChatPane({ hostName, otherUsers }: Props): JSX.Element {
 				/>
 				<label for="input-field" class="input-label"></label>
 				<span class="input-highlight"></span>
-				<img src={`${hostName}/assets/svg/send.svg`} width="30" alt="Search" />
+				<img
+					src={`${props.hostName}/assets/svg/send.svg`}
+					width="30"
+					alt="Search"
+				/>
 			</section>
 		</section>
 	);
-}
+};
+
+export default ChatPane;
