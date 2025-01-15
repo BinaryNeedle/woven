@@ -1,38 +1,27 @@
-import SideBar from '../components/SideBar';
-import ChatPane from "../components/ChatPane";
+import SideBar from "../components/SideBar";
 import FriendList from "../components/FriendList";
-import SearchFriend from "../components/SearchFriend";
-
-// Setting Area
-import SettingSidebar from "../components/SettingSidebar";
-import SettingsPane from "../components/SettingsPane";
+import "../css/FriendList.css";
 
 import users from "../testing/users.json";
 
 export default function Home() {
-	const LoggedId = 3; // This is the user_id of the logged-in user
-	const currentUser = users.find(user => user.user_id === LoggedId);
+	const hostName = import.meta.env.VITE_HOSTNAME;
+	const LoggedId = 1;
+	const currentUser = users.find((user) => user.user_id === LoggedId);
+	const otherUsers = users.filter((user) => user.user_id !== LoggedId);
 
 	return (
 		<main class="grid grid-cols-5 tracking-wide">
-			{/* Sidebar Only Start */}
-
-			{/* TODO: pass 1 array buat data user */}
-			<SideBar currentUser={currentUser} users={users} />
-			{/* Sidebar Only End */}
-
-			{/* Choose Body Start */}
-
-			{/* TODO: tambahin id untuk pemanggilan chatpane */}
-			<ChatPane />
-			{/* <FriendList /> */}
-			{/* <SearchFriend /> */}
-			{/* Choose Body End */}
-
-			{/* Setting Area Start */}
-			{/* <SettingSidebar /> */}
-			{/* <SettingsPane currentUser={currentUser} /> */}
-			{/* Setting Area End */}
+			<SideBar
+				hostName={hostName}
+				currentUser={currentUser}
+				otherUsers={otherUsers}
+			/>
+			<FriendList
+				hostName={hostName}
+				currentUser={currentUser}
+				otherUsers={otherUsers}
+			/>
 		</main>
 	);
 }

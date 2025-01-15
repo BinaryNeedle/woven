@@ -2,7 +2,7 @@
 /* Input container */
 .input-container-text {
       position: relative;
-      margin: 20px;
+      margin: 20px 40px;
       border-bottom: 1px solid rgb(14 116 144);
 }
 
@@ -16,14 +16,6 @@
       display: block;
       width: 100%;
       padding: 10px;
-      border: none;
-      outline: none;
-      background-color: transparent;
-}
-
-.input-field-textarea {
-      display: block;
-      width: 100%;
       border: none;
       outline: none;
       background-color: transparent;
@@ -58,14 +50,5 @@
 }
 
 .input-field:focus+.input-label+.input-highlight {
-      width: 100%;
-}
-
-.input-field-textarea:focus+.input-label {
-      top: -30px;
-      color: whitesmoke;
-}
-
-.input-field-textarea:focus+.input-label+.input-highlight {
       width: 100%;
 }

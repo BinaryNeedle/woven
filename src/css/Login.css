@@ -1,12 +1,12 @@
 /* From Uiverse.io by D3OXY */
 /* DEOXY Was Here */
 .form {
-      --background: #d3d3d3;
+      --background: #CBE4DE;
       --input-focus: #2d8cf0;
       --font-color: #323232;
       --font-color-sub: #666;
       --bg-color: #fff;
-      --main-color: #323232;
+      --main-color: #2E4F4F;
       padding: 20px;
       background: var(--background);
       display: flex;

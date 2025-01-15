@@ -4,7 +4,7 @@
             "username": "ahmadzkh",
             "email": "ahmadzkh@example.com",
             "nickname": "Ahmad Zaky",
-            "biography": "Graphic designer and illustrator.",
+            "biography": "UI/UX Web Developer.",
             "last_seen": "2023-10-01T12:34:56Z",
             "is_online": true
       },
@@ -13,7 +13,7 @@
             "username": "reizafran",
             "email": "reizafran@example.com",
             "nickname": "Raihan Zhafran",
-            "biography": "Digital marketer and content creator.",
+            "biography": "Backend Developer and Engineer.",
             "last_seen": "2023-10-01T11:20:30Z",
             "is_online": false
       },
@@ -22,7 +22,7 @@
             "username": "iuswahyu",
             "email": "iuswahyu@example.com",
             "nickname": "Julius Wahyu",
-            "biography": "Software developer with a passion for open-source projects.",
+            "biography": "Software developer with a passion.",
             "last_seen": "2023-10-01T09:15:00Z",
             "is_online": true
       },
@@ -32,6 +32,24 @@
             "email": "aseptian@example.com",
             "nickname": "Septian Tri",
             "biography": "Construction manager and handyman.",
+            "last_seen": "2023-10-01T08:45:00Z",
+            "is_online": false
+      },
+      {
+            "user_id": 5,
+            "username": "edrray",
+            "email": "edra@example.com",
+            "nickname": "Edra Fharay",
+            "biography": "Graphic designer and illustrator.",
+            "last_seen": "2023-10-01T08:45:00Z",
+            "is_online": false
+      },
+      {
+            "user_id": 6,
+            "username": "hesoyam",
+            "email": "hisyam@example.com",
+            "nickname": "Muhammad Hisyam",
+            "biography": "Digital marketer and content creator.",
             "last_seen": "2023-10-01T08:45:00Z",
             "is_online": false
       }
