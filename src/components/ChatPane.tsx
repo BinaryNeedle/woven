@@ -18,7 +18,6 @@ const ChatPane: Component<ChatPaneProps> = (props): JSX.Element => {
 			{/* Menampilkan hanya satu pengguna */}
 			{targetUser && (
 				<SmallProfileChat
-					key={targetUser.user_id}
 					name={targetUser.nickname}
 					userId={targetUser.user_id}
 					username={targetUser.username}

@@ -87,6 +87,9 @@ const Message: Component<MessageProps> = (props): any => {
 				{message().map((content, index) => (
 					<ChatContent sender="listener" message={content.content} time="100" />
 				))}
+				<section>
+					<ChatContent sender="listener" message={"test"} time="100" />
+				</section>
 
 				{/* You can add more message divs here */}
 			</div>
