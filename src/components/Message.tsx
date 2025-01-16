@@ -1,6 +1,33 @@
+import { JSX, Component, createSignal, createEffect, onMount } from "solid-js";
+import { PrismaClient } from "@prisma/client";
 import ChatContent from "./ChatContent";
 
-export default function Message() {
+interface MessageProps {
+	id: number;
+}
+
+const Message: Component<MessageProps> = (props): any => {
+	console.log("ID PROPS:", props.id);
+	const [message, setMessage] = createSignal<{ content: string }[]>([]);
+	const prisma = new PrismaClient();
+
+	// Core interfaces
+	interface Context {
+		prisma: PrismaClient;
+	}
+	Promise.resolve(
+		prisma.message.findMany({
+			where: { conversation_id: props.id },
+			orderBy: { sent_at: "asc" },
+		})
+	).then((conversation) => {
+		console.log("Fetched Conversation:", conversation);
+		setMessage(conversation);
+	});
+	onMount(() => {
+		console.log("Interval started");
+	});
+	message().map((content, index) => console.log(content.content));
 	return (
 		<section class="row-span-8 text-white flex flex-col-reverse overflow-y-auto mt-1 py-4">
 			<div class="grid grid-cols-2 mx-5 gap-4">
@@ -57,8 +84,14 @@ export default function Message() {
 							commodi rem vero dolorem culpa nam quam qui neque. Exercitationem!"
 					time="12.01"
 				/>
+				{message().map((content, index) => (
+					<ChatContent sender="listener" message={content.content} time="100" />
+				))}
+
 				{/* You can add more message divs here */}
 			</div>
 		</section>
 	);
-}
+};
+
+export default Message;

@@ -27,15 +27,16 @@ const ChatPane: Component<ChatPaneProps> = (props): JSX.Element => {
 				/>
 			)}
 			{/* Component Messages Start */}
-			<Message />
+			<Message id={1} />
 			{/* Component Messages End */}
 			<section class="px-5 mb-10 relative bg-[#0E8388] shadow-xl rounded-lg input-container-text flex">
+				<label for="input-field" class="input-label"></label>
 				<input
 					placeholder="Search or type a new chat"
 					class="input-field focus:text-white"
+					id="input-field"
 					type="text"
 				/>
-				<label for="input-field" class="input-label"></label>
 				<span class="input-highlight"></span>
 				<img
 					src={`${props.hostName}/assets/svg/send.svg`}
