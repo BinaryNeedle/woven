@@ -6,7 +6,7 @@ interface MessageProps {
 	id: number;
 }
 
-const Message: Component<MessageProps> = (props): any => {
+const Message: Component<MessageProps> = (props): JSX.Element => {
 	console.log("ID PROPS:", props.id);
 	const [message, setMessage] = createSignal<{ content: string }[]>([]);
 	const prisma = new PrismaClient();
