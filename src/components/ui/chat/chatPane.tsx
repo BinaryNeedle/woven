@@ -1,10 +1,7 @@
 import { JSX, Component } from "solid-js";
+import SmallProfileChat from "./smallProfileChat";
+import Message from "./message";
 import { useSearchParams } from "@solidjs/router";
-import SmallProfileChat from "./SmallProfileChat";
-import Message from "./Message";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
 
 interface ChatPaneProps {
 	hostName: string;

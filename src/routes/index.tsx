@@ -1,9 +1,10 @@
 import { createSignal, For, createResource } from "solid-js";
 import { PrismaClient } from "@prisma/client";
-import SideBar from "../components/SideBar";
-import FriendList from "../components/FriendList";
+import SideBar from "../components/ui/menu/sideBar";
+import FriendList from "../components/ui/friend/friendList";
 import "../css/FriendList.css";
 import users from "../testing/users.json";
+import { clientEnv } from "~/env/client";
 
 const prisma = new PrismaClient();
 
@@ -22,7 +23,7 @@ type User = {
 
 export default function Home() {
 	const [friends, setFriends] = createSignal([]);
-	const hostName = import.meta.env.VITE_HOSTNAME;
+	const hostName = clientEnv.VITE_HOSTNAME;
 	const LoggedId = 1;
 	// const currentUser = async () => {
 	// 	const user = await prisma.user.findUnique({ where: { userId: 4 } });
@@ -57,8 +58,8 @@ export default function Home() {
 		<main class="grid grid-cols-5 tracking-wide">
 			<SideBar
 				hostName={hostName}
-				// currentUser={currentUser.username}
-				// otherUsers={otherUsers}
+			// currentUser={currentUser.username}
+			// otherUsers={otherUsers}
 			/>
 			<FriendList hostName={hostName} />
 		</main>

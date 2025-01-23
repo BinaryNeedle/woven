@@ -1,5 +1,5 @@
 import { JSXElement, Component, createResource, Suspense, For } from "solid-js";
-import FriendCard from "./FriendCard";
+import FriendCard from "./friendCard";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();

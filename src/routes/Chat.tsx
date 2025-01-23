@@ -1,15 +1,17 @@
 import { JSXElement, createResource, Suspense } from "solid-js";
 import { useSearchParams } from "@solidjs/router";
-import SideBar from "../components/SideBar";
-import ChatPane from "../components/ChatPane";
+import SideBar from "../components/ui/menu/sideBar";
+import ChatPane from "../components/ui/chat/chatPane";
 import "../css/FriendList.css";
 import { PrismaClient } from "@prisma/client";
+import { clientEnv } from "~/env/client";
+
 
 const prisma = new PrismaClient();
 
 export default function Chat(): JSXElement {
 	const [searchParams, setSearchParams] = useSearchParams();
-	const hostName = import.meta.env.VITE_HOSTNAME;
+	const hostName = clientEnv.VITE_HOSTNAME;
 	const [user] = createResource(async () => {
 		const response = await prisma.user.findUnique({
 			where: { userId: Number(searchParams.user) },

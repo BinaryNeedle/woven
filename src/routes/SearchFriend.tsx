@@ -1,11 +1,11 @@
-import SideBar from '../components/SideBar';
-import SearchFriend from "../components/SearchFriend";
+import SideBar from '../components/ui/menu/sideBar';
+import SearchFriend from "../components/ui/menu/searchFriend";
 
 import users from "../testing/users.json";
 
 export default function Home() {
-    	const LoggedId = 3; // This is the user_id of the logged-in user
-	const currentUser  = users.find(user => user.user_id === LoggedId);
+	const LoggedId = 3; // This is the user_id of the logged-in user
+	const currentUser = users.find(user => user.user_id === LoggedId);
 
 	return (
 		<main class="grid grid-cols-5 tracking-wide">

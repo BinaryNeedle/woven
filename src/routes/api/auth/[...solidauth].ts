@@ -1,33 +1,4 @@
-// File: src/routes/api/auth/[...solidauth].ts
-import { SolidAuth, type SolidAuthConfig } from "@auth/solid-start";
-import GoogleProvider from "@auth/core/providers/google";
+import { SolidAuth } from "@solid-mediakit/auth";
+import { authOptions } from "~/server/auth";
 
-const authOpts: SolidAuthConfig = {
-    providers: [
-        GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID!,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-            authorization: {
-                params: {
-                    prompt: "consent", // Force account selection
-                    access_type: "offline" // Ensure refresh token
-                }
-            }
-        })
-    ],
-    callbacks: {
-        async session({ session, token }) {
-            session.user.id = token.sub!;
-            return session;
-        }
-    },
-};
-
-export const { GET, POST } = SolidAuth(authOpts);
-
-// Google Cloud Console Configuration Steps:
-// 1. Go to https://console.cloud.google.com/apis/credentials
-// 2. Create OAuth 2.0 Client ID
-// 3. Add these Authorized redirect URIs:
-// - http://localhost:3000/api/auth/callback/google
-// - https://yourdomain.com/api/auth/callback/google
+export const { GET, POST } = SolidAuth(authOptions);

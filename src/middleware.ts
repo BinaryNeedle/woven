@@ -1,4 +1,7 @@
+import { getSession } from "@solid-mediakit/auth/";
 import { createMiddleware } from "@solidjs/start/middleware";
+import { authOptions } from "./server/auth";
+
 
 export default createMiddleware({
 	onRequest: [
@@ -12,8 +15,8 @@ export default createMiddleware({
 				return;
 			}
 
-			const cookies = request.headers.get("cookie") || "";
-			const hasSessionId = cookies.includes("session_id=");
+			// const cookies = request.headers.get("cookie") || "";
+			const hasSessionId = getSession(request, authOptions);
 
 			if (!hasSessionId) {
 				return new Response(null, {
@@ -28,3 +31,7 @@ export default createMiddleware({
 		},
 	],
 });
+
+export const config = {
+	matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+}

@@ -1,11 +1,13 @@
-import FriendCard from "./FriendCard";
+import FriendCard from "../friend/friendCard";
+import { clientEnv } from "~/env/client";
+
 
 export default function SearchFriend() {
-      const hostName = import.meta.env.VITE_HOSTNAME;
+      const hostName = clientEnv.VITE_HOSTNAME;
       return (
             <section class="col-span-4 h-screen justify-center items-center">
                   <div class="justify-center items-center text-center flex my-10 text-4xl">
-                        <img src={hostName + "/assets/svg/users.svg"} class="w-12 mr-4" alt="" srcset="" /> 
+                        <img src={hostName + "/assets/svg/users.svg"} class="w-12 mr-4" alt="" srcset="" />
                         <h1 class="h1 flex text-white">
                               SEARCH FRIENDS
                         </h1>
@@ -25,7 +27,7 @@ export default function SearchFriend() {
                                                 <img class="mx-2"
                                                       src={hostName + "/assets/svg/Conversation Image.svg"}
                                                       alt="Profile Image"
-                                                      />
+                                                />
                                                 <div class="relative group mx-2 col-span-2">
                                                       <h2 class="text-lg font-bold text-white">Rey</h2>
                                                       <p class="text-sm text-slate-200 truncate w-80">

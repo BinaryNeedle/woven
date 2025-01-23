@@ -9,7 +9,7 @@ import {
 } from "solid-js";
 import { useSearchParams } from "@solidjs/router";
 import { PrismaClient } from "@prisma/client";
-import ChatContent from "./ChatContent";
+import ChatContent from "./chatContent";
 
 import { createClient } from "@supabase/supabase-js";
 import { schema } from "~/schema";
