@@ -49,7 +49,11 @@ const FriendList: Component<FriendListProps> = (props): JSXElement => {
 			<div class="grid grid-rows row-auto">
 				<For each={user_contact()}>
 					{(friend) => (
-						<FriendCard hostName={props.hostName} user={friend.alias} />
+						<FriendCard
+							hostName={props.hostName}
+							user={friend.alias}
+							targetUser={friend.contact_user_id}
+						/>
 					)}
 				</For>
 			</div>
