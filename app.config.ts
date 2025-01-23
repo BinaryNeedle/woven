@@ -3,10 +3,10 @@ import { defineConfig } from "@solidjs/start/config";
 export default defineConfig({
 	server: {
 		experimental: {
-			websocket: true,
+			// websocket: true,
 		},
 	},
-	middleware: "./src/middleware.ts",
+	// middleware: "./src/middleware.ts",
 }).addRouter({
 	name: "ws",
 	type: "http",
