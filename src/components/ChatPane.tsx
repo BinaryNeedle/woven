@@ -4,27 +4,14 @@ import Message from "./Message";
 
 interface ChatPaneProps {
 	hostName: string;
-	otherUsers: any;
+	targetUser: any;
 }
 
 const ChatPane: Component<ChatPaneProps> = (props): JSX.Element => {
-	const targetUserId = 2;
-	const targetUser = props.otherUsers.find(
-		(user: any) => user.user_id === targetUserId
-	);
-
 	return (
 		<section class="col-span-4 grid grid-rows-10 h-dvh">
 			{/* Menampilkan hanya satu pengguna */}
-			{targetUser && (
-				<SmallProfileChat
-					name={targetUser.nickname}
-					userId={targetUser.user_id}
-					username={targetUser.username}
-					isOnline={targetUser.is_online}
-					hostName={props.hostName}
-				/>
-			)}
+			<SmallProfileChat name={props.targetUser} hostName={props.hostName} />
 			{/* Component Messages Start */}
 			<Message id={1} />
 			{/* Component Messages End */}
