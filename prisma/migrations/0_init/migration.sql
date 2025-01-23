@@ -1,5 +1,5 @@
-yarn run v1.22.22
-$ D:\Jtnqr\Documents\Codes\Web\chat-app\node_modules\.bin\prisma migrate diff --from-empty --to-schema-datamodel .\prisma\schema.prisma --script
+-- yarn run v1.22.22
+-- $ D:\Jtnqr\Documents\Codes\Web\chat-app\node_modules\.bin\prisma migrate diff --from-empty --to-schema-datamodel .\prisma\schema.prisma --script
 -- CreateEnum
 CREATE TYPE "message_status" AS ENUM ('pending', 'delivered', 'read');
 
@@ -112,4 +112,4 @@ ALTER TABLE "user_contact" ADD CONSTRAINT "user_contact_contact_user_id_fkey" FO
 -- AddForeignKey
 ALTER TABLE "user_contact" ADD CONSTRAINT "user_contact_owner_user_id_fkey" FOREIGN KEY ("owner_user_id") REFERENCES "user"("user_id") ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-Done in 0.69s.
+-- Done in 0.69s.

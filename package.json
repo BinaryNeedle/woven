@@ -7,6 +7,9 @@
     "start": "vinxi start"
   },
   "dependencies": {
+    "@auth/core": "^0.37.4",
+    "@auth/prisma-adapter": "^2.7.4",
+    "@auth/solid-start": "^0.15.4",
     "@prisma/client": "^5.21.1",
     "@solidjs/router": "^0.14.7",
     "@solidjs/start": "^1.0.8",

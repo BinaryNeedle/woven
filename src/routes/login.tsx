@@ -1,33 +1,31 @@
 import { A } from "@solidjs/router";
+import { signIn } from "@auth/solid-start/client";
 import "../css/Login.css";
 
 export default function login() {
-	const hostName = import.meta.env.VITE_HOSTNAME;
-	const handleGoogleLogin = async () => {
-		// Create URL for API request to Google Auth
-		const url = "https://accounts.google.com/o/oauth2/v2/auth";
-		const clientId = "YOUR_CLIENT_ID"; // Replace with your client ID
-		const redirectUri = hostName; // Replace with your redirect URI
-		const scope = "profile email";
-		const responseType = "code";
-		// Create API request URL
-		const authUrl = `${url}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=${responseType}`;
-
-		// Redirect to Google Auth
-		// window.location.href = authUrl; // Use the authUrl instead of a static URL
-		window.location.href = hostName; // Use the authUrl instead of a static URL
+	// const hostName = import.meta.env.VITE_HOSTNAME;
+	const handleGoogleSignIn = () => {
+		signIn("google", {
+			callbackUrl: "/", // Redirect after successful login
+			redirect: true
+		});
 	};
 
 	return (
 		<main class="flex items-center justify-center h-screen bg-[#0E8388]">
-			<form action="" class="form shadow-xl w-96 p-5">
+			<div class="form shadow-xl w-96 p-5">
 				<p>
 					Welcome,<span>sign in to continue</span>
 				</p>
 				<button
 					class="oauthButton w-full"
-					type="button"
-					onClick={handleGoogleLogin}
+					onClick={() => {
+						try {
+							handleGoogleSignIn();
+						} catch (error) {
+							console.error("An error occurred during Google sign-in:", error);
+						}
+					}}
 				>
 					<svg class="icon" viewBox="0 0 24 24">
 						<path
@@ -74,7 +72,7 @@ export default function login() {
 						<path d="m13 17 5-5-5-5"></path>
 					</svg>
 				</button>
-			</form>
+			</div>
 		</main>
 	);
 }
