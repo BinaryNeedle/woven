@@ -3,7 +3,7 @@ import { JSX, Component } from "solid-js";
 interface ChatContentProps {
 	sender: string;
 	message: any;
-	time: string;
+	time: Date | null;
 }
 
 const ChatContent: Component<ChatContentProps> = (props): JSX.Element => {
