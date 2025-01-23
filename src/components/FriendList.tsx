@@ -1,11 +1,29 @@
-import { JSXElement, Component } from "solid-js";
+import { JSXElement, Component, createResource, Suspense, For } from "solid-js";
 import FriendCard from "./FriendCard";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
 interface FriendListProps {
 	hostName: string;
-	otherUsers: any;
 }
 
+type Friend = {
+	user_contact_id: number;
+	owner_user_id: number;
+	contact_user_id: number;
+	alias: string;
+	created_at: Date | null;
+	updated_at: Date | null;
+};
+
 const FriendList: Component<FriendListProps> = (props): JSXElement => {
+	const [user_contact] = createResource(async () => {
+		const response = await prisma.user_contact.findMany({
+			where: { owner_user_id: 4 },
+			orderBy: { alias: "asc" },
+		});
+		return (await response) as Friend[];
+	});
 	return (
 		<section class="col-span-4 h-fit justify-center items-center">
 			<div class="justify-center h-fit items-center text-center flex my-10 text-4xl">
@@ -29,9 +47,11 @@ const FriendList: Component<FriendListProps> = (props): JSXElement => {
 				<span class="input-highlight"></span>
 			</div>
 			<div class="grid grid-rows row-auto">
-				{props.otherUsers.map((user) => (
-					<FriendCard user={user} hostName={props.hostName} />
-				))}
+				<For each={user_contact()}>
+					{(friend) => (
+						<FriendCard hostName={props.hostName} user={friend.alias} />
+					)}
+				</For>
 			</div>
 		</section>
 	);

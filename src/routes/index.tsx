@@ -21,11 +21,6 @@ type User = {
 };
 
 export default function Home() {
-	const [user] = createResource(async () => {
-		const response = await prisma.user.findUnique({ where: { userId: 4 } });
-		console.log(response);
-		return await response;
-	});
 	const [friends, setFriends] = createSignal([]);
 	const hostName = import.meta.env.VITE_HOSTNAME;
 	const LoggedId = 1;
@@ -65,7 +60,7 @@ export default function Home() {
 				// currentUser={currentUser.username}
 				// otherUsers={otherUsers}
 			/>
-			{/* <FriendList hostName={hostName} otherUsers={otherUsers} /> */}
+			<FriendList hostName={hostName} />
 		</main>
 	);
 }
