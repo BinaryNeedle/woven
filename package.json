@@ -10,6 +10,7 @@
     "@prisma/client": "^5.21.1",
     "@solidjs/router": "^0.14.7",
     "@solidjs/start": "^1.0.8",
+    "@supabase/supabase-js": "^2.48.0",
     "autoprefixer": "^10.4.19",
     "dexie": "^4.0.8",
     "google-auth-library": "^9.14.2",
