@@ -58,6 +58,13 @@ model role {
   conversation_member conversation_member[]
 }
 
+model session {
+  sess_id             Int                   @id @default(autoincrement())
+  sess_user_id        Int                   @unique
+  created_at          DateTime              @default(now()) @db.Timestamp(6)
+  exp_at              DateTime
+}
+
 /// This model or at least one of its fields has comments in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 model user {
   userId                                          Int                   @id @default(autoincrement()) @map("user_id")
