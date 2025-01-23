@@ -1,9 +1,12 @@
-interface Props {
+import { JSXElement, Component } from "solid-js";
+import { A } from "@solidjs/router";
+interface FriendCardProps {
 	hostName: string;
 	user: any;
+	targetUser: number;
 }
 
-export default function FriendCard({ hostName, user }: Props) {
+const FriendCard: Component<FriendCardProps> = (props): JSXElement => {
 	return (
 		<div class="flex justify-center items-center my-2">
 			<div class="w-full mx-10 bg-[#0E8388] shadow-xl cursor-pointer rounded-xl p-3 h-fit">
@@ -11,11 +14,11 @@ export default function FriendCard({ hostName, user }: Props) {
 					<div class="flex grid-cols-3 col-span-3 w-full">
 						<img
 							class="mr-5 w-16"
-							src={`${hostName}/assets/svg/Conversation Image.svg`}
+							src={`${props.hostName}/assets/svg/Conversation Image.svg`}
 							alt="Profile Image"
 						/>
 						<div class="relative group mx-2 col-span-2">
-							<h2 class="text-lg font-bold text-white">{user}</h2>
+							<h2 class="text-lg font-bold text-white">{props.user}</h2>
 							{/* <p class="text-sm text-slate-200 truncate w-80">
                                                 {user.biography}
                                           </p>
@@ -26,16 +29,18 @@ export default function FriendCard({ hostName, user }: Props) {
 					</div>
 					<section class="w-fit flex justify-center items-center">
 						{/* <a href={`/chat/${user.user_id}`} class=""> */}
-						<a href="/chat" class="">
+						<A href={"/chat?user=" + props.targetUser} class="">
 							<img
-								src={`${hostName}/assets/svg/message.svg`}
+								src={`${props.hostName}/assets/svg/message.svg`}
 								class="w-12 h-12 p-3 bg-[#17394D] hover:bg-[#0E8388] rounded-full shadow"
 								alt="message.svg"
 							/>
-						</a>
+						</A>
 					</section>
 				</section>
 			</div>
 		</div>
 	);
-}
+};
+
+export default FriendCard;
