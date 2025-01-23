@@ -18,6 +18,7 @@ export const UserContextProvider: Component<UserContextProps> = (
 	props
 ): JSXElement => {
 	const [user, setUser] = createStore();
+
 	const userInfo = createMemo(() => user);
 	return (
 		<UserContext.Provider value={userInfo}>
