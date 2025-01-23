@@ -14,8 +14,8 @@ export default function login() {
 		const authUrl = `${url}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=${responseType}`;
 
 		// Redirect to Google Auth
-		// window.location.href = authUrl; // Use the authUrl instead of a static URL
-		window.location.href = hostName; // Use the authUrl instead of a static URL
+		window.location.href = authUrl; // Use the authUrl instead of a static URL
+		// window.location.href = hostName; // Use the authUrl instead of a static URL
 	};
 
 	return (
