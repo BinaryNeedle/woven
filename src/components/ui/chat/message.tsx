@@ -13,9 +13,10 @@ import ChatContent from "./chatContent";
 
 import { createClient } from "@supabase/supabase-js";
 import { schema } from "~/schema";
+import { clientEnv } from "~/env/client";
 
-const SUPABASE_URL = import.meta.env.VITE_DATABASE_URL;
-const SUPABASE_KEY = import.meta.env.VITE_DATABASE_KEY;
+const SUPABASE_URL = clientEnv.VITE_DATABASE_URL;
+const SUPABASE_KEY = clientEnv.VITE_DATABASE_KEY;
 
 export const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 

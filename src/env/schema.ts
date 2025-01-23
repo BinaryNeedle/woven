@@ -15,4 +15,6 @@ export const clientScheme = z.object({
   MODE: z.enum(['development', 'production', 'test']).default('development'),
   VITE_AUTH_PATH: z.string().optional(),
   VITE_HOSTNAME: z.string(),
+  VITE_DATABASE_URL: z.string(),
+  VITE_DATABASE_KEY: z.string(),
 });
